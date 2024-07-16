@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'saishiko';
 
-$THEME->sheets = ['iomad'];
+$THEME->sheets = [''];
 
 $THEME->layouts = [
     // Most backwards compatible layout without the blocks - this is the layout used by default.

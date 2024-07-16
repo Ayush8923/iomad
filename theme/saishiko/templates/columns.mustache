@@ -59,9 +59,13 @@
 
         <div id="page-content" class="row {{#haspreblocks}} blocks-pre {{/haspreblocks}} {{#haspostblocks}} blocks-post {{/haspostblocks}} ">
             <div id="region-main-box" class="region-main">
-                <p>Hello World</p>
-                <section id="region-main" class="region-main-content" aria-label="{{#str}}content{{/str}}" style="display: none;">
+                <section id="region-main" class="region-main-content" aria-label="{{#str}}content{{/str}}">
                     {{{ output.main_content }}}
+                </section>
+            </div>
+            <div class="columnleft blockcolumn {{#haspreblocks}} has-blocks {{/haspreblocks}}">
+                <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
+                    {{{ sidepreblocks }}}
                 </section>
             </div>
             
