@@ -15,14 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_admin_bookmarks', language 'en', branch 'MOODLE_20_STABLE'
+ * IOMAD Bootstrap theme.
  *
- * @package   block_admin_bookmarks
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme_saishiko
+ * @copyright  2018 Bas Brands
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['admin_bookmarks:addinstance'] = 'Add a new admin bookmarks block';
-$string['admin_bookmarks:myaddinstance'] = 'Add a new admin bookmarks block to Dashboard';
-$string['pluginname'] = 'Ayush bookmarks';
-$string['privacy:metadata'] = 'The Admin bookmarks block only shows data stored in other locations.';
+// This line protects the file from being accessed by a URL directly.
+defined('MOODLE_INTERNAL') || die();
+
+$plugin->version = 2023100900;
+$plugin->requires = 2023100400;
+$plugin->component = 'theme_saishiko';
+$plugin->dependencies = ['theme_boost' => 2023100400];

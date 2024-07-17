@@ -15,14 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_admin_bookmarks', language 'en', branch 'MOODLE_20_STABLE'
+ * A one column layout for the iomadbootstrap theme.
  *
- * @package   block_admin_bookmarks
- * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
+ * @package   theme_saishiko
+ * @copyright 2018 Bas Brands
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['admin_bookmarks:addinstance'] = 'Add a new admin bookmarks block';
-$string['admin_bookmarks:myaddinstance'] = 'Add a new admin bookmarks block to Dashboard';
-$string['pluginname'] = 'Ayush bookmarks';
-$string['privacy:metadata'] = 'The Admin bookmarks block only shows data stored in other locations.';
+defined('MOODLE_INTERNAL') || die();
+
+$bodyattributes = $OUTPUT->body_attributes([]);
+
+$templatecontext = [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes
+];
+if (empty($PAGE->layout_options['noactivityheader'])) {
+    $header = $PAGE->activityheader;
+    $renderer = $PAGE->get_renderer('core');
+    $templatecontext['headercontent'] = $header->export_for_template($renderer);
+}
+
+echo $OUTPUT->render_from_template('theme_saishiko/contentonly', $templatecontext);
+
